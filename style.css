@@ -1,0 +1,54 @@
+:root {
+  --primary: #551a8b;
+  --secondary: #333333;
+  --font-primary: "Playfair Display", serif;
+  --font-secondary: "Lato", serif;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+.nav-container {
+  text-decoration: none;
+  width: 100%;
+  height: 20%;
+}
+.nav-main {
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--secondary);
+  display: flex;
+  justify-content: space-between;
+}
+.nav-list {
+  color: white;
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  justify-content: space-between;
+  width: 30%;
+}
+.nav-items {
+  color: white;
+  text-decoration: none;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.nav-title {
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

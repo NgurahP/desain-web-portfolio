@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ngurah Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+      :root {
+        --primary: #551a8b;
+        --secondary: #333333;
+        --font-primary: "Playfair Display", serif;
+        --font-secondary: "Lato", serif;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+        font-family: var(--font-secondary);
+        text-decoration: none;
+      }
+
+      /* Navbar Section */
+      .nav-container {
+        text-decoration: none;
+        width: 100%;
+        height: 20%;
+      }
+      .nav-main {
+        width: 100%;
+        text-decoration: none;
+        background-color: transparent;
+        color: var(--secondary);
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+      }
+      .nav-list {
+        align-items: center;
+        justify-items: center;
+        color: white;
+        display: flex;
+        text-decoration: none;
+        list-style: none;
+        font-family: var(--font-secondary);
+        font-size: 1.1rem;
+        justify-content: space-between;
+        width: 20%;
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+      .nav-items:hover {
+        background-color: white;
+        color: #000000;
+        border-radius: 1rem;
+        padding: 0rem 1rem 0rem 1rem;
+      }
+      .nav-items:hover .nav-link {
+        color: black;
+      }
+      .nav-items {
+        color: white;
+        text-decoration: none;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        transition: all 0.5s ease;
+      }
+      .nav-title {
+        color: white;
+        text-decoration: none;
+        font-family: var(--font-primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      .nav-link {
+        text-decoration: none;
+        color: white;
+      }
+
+      /* home section */
+      .home-section {
+        height: 100vh;
+        background-image: url(./img/Hero-bg.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+      }
+      .hero-container {
+        z-index: 10;
+      }
+      .hero-header {
+        font-family: var(--font-primary);
+        padding-left: 4rem;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      .hero-child {
+        font-size: 1.1rem;
+        color: white;
+        padding: 2rem 0rem 1rem 6rem;
+      }
+      .to-about {
+        padding: 0rem 0rem 2rem 6rem;
+        text-decoration: none;
+        display: flex;
+      }
+      .more-button {
+        color: white;
+        background-color: var(--secondary);
+        /* border-style: none; */
+        width: 6.5rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        border-style: none;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border-radius: 0.5rem;
+      }
+      .hero-line {
+        width: 10rem;
+        margin-left: 4.3rem;
+        text-align: left;
+        justify-content: left;
+      }
+      .more-button:hover .material-icons {
+        transform: rotate(90deg);
+        transition: transform 0.5s ease;
+      }
+
+      /* About section */
+      .about-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+        background-color: var(--secondary);
+      }
+      .about-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .information-photo {
+        margin: 0rem 4rem 0rem 2rem;
+        padding: 0rem 2rem 0rem 2rem;
+        width: 14%;
+        height: 50%;
+      }
+      .information-table {
+        margin: 0rem 2rem 0rem 4rem;
+      }
+      td {
+        padding: 20px;
+        font-size: 1.2rem;
+        text-align: left;
+        border-bottom: 2px solid #737373;
+        color: white;
+      }
+
+      /* Education Section */
+      .education-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: var(--primary);
+      }
+      .section-title {
+        color: white;
+      }
+      .title-underline {
+        width: 10rem;
+        height: 3px;
+        background-color: white;
+        margin: 0rem 0rem 2rem 0rem;
+      }
+
+      .edu-container {
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 2rem 0rem 2rem;
+      }
+      .edu-photo {
+        object-fit: cover;
+        border-radius: 1rem;
+        width: 100%;
+      }
+      .edu-title {
+        font-size: 1.4rem;
+        font-family: var(--font-primary);
+      }
+      .edu-year {
+        font-size: 1.1rem;
+      }
+
+      /* Skill Section */
+      .skill-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: var(--secondary);
+      }
+      .skill-con {
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 2rem 0rem 2rem;
+      }
+      .skill-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px 3px rgb(0 0 0 / 0.1),
+          0 4px 6px 4px rgb(0 0 0 / 0.1);
+        transition: all 0.5s ease;
+      }
+      .skill-box:hover {
+        transform: scale(.95);
+        box-shadow: 0 10px 15px 3px rgba(172, 11, 205, 0.094),
+          0 4px 6px 4px rgba(172, 11, 205, 0.094);
+      }
+      .skill-photo {
+        padding: 2rem 2rem 2rem 2rem;
+        width: 40%;
+      }
+      .skill-title {
+        padding: 0rem 0rem 1rem 0rem;
+        font-size: 1.3rem;
+      }
+
+      /* Project Section */
+      .project-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: var(--primary);
+      }
+      .project-con {
+        color: white;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 2rem 0rem 2rem;
+      }
+      .portfolio-photo {
+        object-fit: cover;
+        border-radius: 1rem;
+        width: 100%;
+      }
+      .portfolio-button-con {
+        background-color: white;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: white;
+      }
+      .link-portfolio {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        height: 2rem;
+        border-radius: 0.5rem;
+        padding: 0rem 2rem 0rem 2rem;
+        background-color: white;
+        color: black;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--secondary);
+      }
+      .contact-con {
+        color: white;
+        display: flex;
+        width: 20rem;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        padding: 0rem 1rem 0rem 1rem;
+      }
+      .form-box {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        width: 15rem;
+      }
+      .form-label {
+        font-size: 1.1rem;
+        font-family: var(--font-primary);
+      }
+      .form-input {
+        color: white;
+        margin-top: 0.5rem;
+        border: 2px solid white;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        /* width: 100%; */
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      }
+      .form-button {
+        background-color: white;
+        width: 5rem;
+        height: 2rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav class="nav-main">
+        <ul class="nav-list">
+          <li class="nav-items">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav-link" href="#about">About me</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+        </ul>
+        <h1 class="nav-title">
+          <a href="#home" class="nav-link">Portfolio</a>
+        </h1>
+        <ul class="nav-list">
+          <li class="nav-items">
+            <a class="nav-link" href="#skill">Skill</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav-link" href="#project">Project</a>
+          </li>
+          <li class="nav-items">
+            <a class="nav-link" href="#contact">Contact </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!--          Home Section        -->
+    <div id="home" class="home-section">
+      <!-- <img src="./img/Hero-bg.jpeg" alt="hero-photo" class="hero-bg" /> -->
+      <div class="hero-container">
+        <div class="hero-header">Hey, There !!</div>
+        <hr class="hero-line" />
+        <div class="hero-child">
+          I'm a Junior Programer. For more detail click the button
+        </div>
+        <a href="#about" class="to-about">
+          <button class="more-button">
+            More
+            <i class="material-icons" style="font-size: 2rem">chevron_right</i>
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!--        About Section          -->
+    <div id="about" class="about-section">
+      <div class="about-container">
+        <img
+          src="./img/My-Photos.jpg"
+          alt="My-Photos"
+          class="information-photo" />
+        <table class="information-table">
+          <tr>
+            <td>Name</td>
+            <td>Ngurah Putra Amerta Widhi Gunaya</td>
+          </tr>
+          <tr>
+            <td>NIM</td>
+            <td>2401010508</td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>Male</td>
+          </tr>
+          <tr>
+            <td>Date of Birth</td>
+            <td>March 24, 2006</td>
+          </tr>
+          <tr>
+            <td>Hobbies</td>
+            <td>Reading Comics, Playing Volleyball, Coding</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!--        Education Section         -->
+    <div id="education" class="education-section">
+      <div class="section-title">
+        <h1 class="title">Education</h1>
+      </div>
+      <hr class="title-underline" />
+      <div class="edu-container">
+        <div class="edu-box">
+          <img src="./img/Instiki.jpg" alt="Instiki" class="edu-photo" />
+          <h1 class="edu-title">INSTIKI</h1>
+          <div class="edu-year">(2024 - Now)</div>
+        </div>
+
+        <div>
+          <img src="./img/smk.jpg" alt="Wira Harapan" class="edu-photo" />
+          <h1 class="edu-title">Wira Harapan Vocational School</h1>
+          <div class="edu-year">(2021 - 2024)</div>
+        </div>
+
+        <div>
+          <img src="./img/smp.jpg" alt="2 Harapan" class="edu-photo" />
+          <h1 class="edu-title">2 Harapan Middle School</h1>
+          <div class="edu-year">(2018 - 2021)</div>
+        </div>
+
+        <div>
+          <img src="./img/sd.jpg" alt="Immanuel" class="edu-photo" />
+          <h1 class="edu-title">Immanuel Elementary School</h1>
+          <div class="edu-year">(2012 - 2018)</div>
+        </div>
+      </div>
+    </div>
+
+    <!--        Skill Section         -->
+    <div id="skill" class="skill-section">
+      <div class="skill-con">
+        <div class="skill-box">
+          <img src="./img/skill/html.png" alt="HTML" class="skill-photo" />
+          <div class="skill-title">HTML</div>
+        </div>
+        <div class="skill-box">
+          <img src="./img/skill/CSS.png" alt="CSS" class="skill-photo" />
+          <div class="skill-title">CSS</div>
+        </div>
+        <div class="skill-box">
+          <img src="./img/skill/php.png" alt="PHP" class="skill-photo" />
+          <div class="skill-title">PHP</div>
+        </div>
+        <div class="skill-box">
+          <img src="./img/skill/sql.png" alt="SQL" class="skill-photo" />
+          <div class="skill-title">SQL</div>
+        </div>
+        <div class="skill-box">
+          <img
+            src="./img/skill/reactjs.png"
+            alt="React JS"
+            class="skill-photo" />
+          <div class="skill-title">React JS</div>
+        </div>
+        <div class="skill-box">
+          <img src="./img/skill/nextjs.png" alt="Next JS" class="skill-photo" />
+          <div class="skill-title">Next JS</div>
+        </div>
+        <div class="skill-box">
+          <img
+            src="./img/skill/tailwindcss.png"
+            alt="Tailwind CSS"
+            class="skill-photo" />
+          <div class="skill-title">Tailwind CSS</div>
+        </div>
+        <div class="skill-box">
+          <img
+            src="./img/skill/typescript.png"
+            alt="typescript"
+            class="skill-photo" />
+          <div class="skill-title">Typescript</div>
+        </div>
+      </div>
+    </div>
+
+    <!--        Project Section         -->
+    <div id="project" class="project-section">
+      <div class="section-title">
+        <h1 class="title">Project</h1>
+      </div>
+      <hr class="title-underline" />
+      <div class="project-con">
+        <div className="shadow-md shadow-gray-400 rounded-lg">
+          <img
+            src="./img/portfolio.png"
+            alt="portofolio"
+            class="portfolio-photo" />
+          <div class="portfolio-button-con">
+            <a
+              href="https://github.com/NgurahP/CV-project.github.io/tree/main"
+              target="_blank"
+              class="link-portfolio"
+              style="text-decoration: none">
+              Code
+            </a>
+            <a
+              href="https://cv-project-github-io-deploy.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-portfolio"
+              style="text-decoration: none">
+              Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--        Contact Section         -->
+    <div id="contact" class="contact-section">
+      <div class="section-title">
+        <h1 class="title">Contact</h1>
+      </div>
+      <hr class="title-underline" />
+      <div class="contact-con">
+        <form action="">
+          <div class="form-box">
+            <label for="Name" class="form-label">Name</label>
+            <input type="text" placeholder="Your Name" class="form-input" />
+          </div>
+          <div class="form-box">
+            <label for="Email" class="form-label">E-mail</label>
+            <input
+              type="email"
+              name="Email"
+              placeholder="Your E-Mail"
+              class="form-input" />
+          </div>
+          <div class="form-box">
+            <label for="Message" class="form-label">Message</label>
+            <textarea
+              name="Message"
+              id=""
+              placeholder="Your Message"
+              class="form-input"
+              rows="5"
+              cols="10"></textarea>
+          </div>
+          <button type="submit" class="form-button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
